@@ -12,6 +12,10 @@ class Heuristics(HeuristicsManager):
     Helper class for testing heuristics
     """
 
+    def find_all_substrings(string, sub):
+        starts =[match.start() for match in re.finditer(re.escape(sub), string)]
+        return starts
+
     def crawler_contains_only_article_alikes(self, response, site_dict):
         """
         Some crawlers (rssCrawlers, sitemapCrawlers) only return sites, which
@@ -48,7 +52,7 @@ class Heuristics(HeuristicsManager):
             return False
         return True
 
-    def meta_contains_boycott_keyword(self, response, site_dict):
+    def boycott(self, response, site_dict):
         """
         Determines whether the response's meta data contains the keyword 'boycott'
 
@@ -58,12 +62,10 @@ class Heuristics(HeuristicsManager):
         :return bool: Determines wether the reponse's meta data contains the
                       keyword 'article'
         """
-        contains_boycott = response.xpath('//meta') \
-            .re('(= ?["\'][^"\']*boycott[^"\']*["\'])')
+        if ("boycott" in response.url)
 
-        if not contains_boycott:
-            return False
-        return True
+            return True
+        return False
 
     @staticmethod
     def og_type(response, site_dict):

@@ -48,49 +48,20 @@
       # it is not possible to create an additional_rss_daemon for a daemonized array-object
     
     {
-      "url": "http://www.nytimes.com/",
+      "url": "https://www.nytimes.com",
       "crawler": "RecursiveCrawler",
-      "overwrite_heuristics": {
-        "meta_contains_article_keyword": true,
-        "meta_contains_boycott_keyword": true,
-        "og_type": true,
-        "linked_headlines": true,
-        "self_linked_headlines": false
-        },
-      "pass_heuristics_condition": "meta_contains_boycott_keyword"
     },
     {
       "url": "http://www.latimes.com/",
       "crawler": "RecursiveCrawler",
-      "overwrite_heuristics": {
-        "meta_contains_article_keyword": true,
-        "og_type": true,
-        "linked_headlines": true,
-        "self_linked_headlines": false
-        },
-      "pass_heuristics_condition": "meta_contains_article_keyword and (og_type and linked_headlines)"
     },
     {
       "url": "http://www.chicagotribune.com/",
       "crawler": "RecursiveCrawler",
-      "overwrite_heuristics": {
-        "meta_contains_article_keyword": true,
-        "og_type": true,
-        "linked_headlines": true,
-        "self_linked_headlines": false
-        },
-      "pass_heuristics_condition": "meta_contains_article_keyword and (og_type and linked_headlines)"
     },
     {
       "url": "http://www.wsj.com/",
       "crawler": "RecursiveCrawler",
-      "overwrite_heuristics": {
-        "meta_contains_article_keyword": true,
-        "og_type": true,
-        "linked_headlines": true,
-        "self_linked_headlines": false
-        },
-      "pass_heuristics_condition": "meta_contains_article_keyword and (og_type and linked_headlines)"
     }
   ]
 }
